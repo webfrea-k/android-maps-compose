@@ -1,3 +1,17 @@
+// Copyright 2022 Google LLC
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
 package com.google.maps.android.compose
 
 import com.google.android.gms.maps.model.LatLngBounds
@@ -13,16 +27,16 @@ internal val DefaultMapProperties = MapProperties()
  * compatibility on future changes.
  * See: https://jakewharton.com/public-api-challenges-in-kotlin/
  */
-class MapProperties(
-    val isBuildingEnabled: Boolean = false,
-    val isIndoorEnabled: Boolean = false,
-    val isMyLocationEnabled: Boolean = false,
-    val isTrafficEnabled: Boolean = false,
-    val latLngBoundsForCameraTarget: LatLngBounds? = null,
-    val mapStyleOptions: MapStyleOptions? = null,
-    val mapType: MapType = MapType.NORMAL,
-    val maxZoomPreference: Float = 21.0f,
-    val minZoomPreference: Float = 3.0f,
+public class MapProperties(
+    public val isBuildingEnabled: Boolean = false,
+    public val isIndoorEnabled: Boolean = false,
+    public val isMyLocationEnabled: Boolean = false,
+    public val isTrafficEnabled: Boolean = false,
+    public val latLngBoundsForCameraTarget: LatLngBounds? = null,
+    public val mapStyleOptions: MapStyleOptions? = null,
+    public val mapType: MapType = MapType.NORMAL,
+    public val maxZoomPreference: Float = 21.0f,
+    public val minZoomPreference: Float = 3.0f,
 ) {
     override fun toString(): String = "MapProperties(" +
         "isBuildingEnabled=$isBuildingEnabled, isIndoorEnabled=$isIndoorEnabled, " +
@@ -54,7 +68,7 @@ class MapProperties(
         minZoomPreference
     )
 
-    fun copy(
+    public fun copy(
         isBuildingEnabled: Boolean = this.isBuildingEnabled,
         isIndoorEnabled: Boolean = this.isIndoorEnabled,
         isMyLocationEnabled: Boolean = this.isMyLocationEnabled,
@@ -64,7 +78,7 @@ class MapProperties(
         mapType: MapType = this.mapType,
         maxZoomPreference: Float = this.maxZoomPreference,
         minZoomPreference: Float = this.minZoomPreference,
-    ) = MapProperties(
+    ): MapProperties = MapProperties(
         isBuildingEnabled = isBuildingEnabled,
         isIndoorEnabled = isIndoorEnabled,
         isMyLocationEnabled = isMyLocationEnabled,
